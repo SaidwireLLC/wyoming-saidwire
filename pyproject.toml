@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wyoming-saidwire"
+version = "0.1.0"
+description = "Wyoming protocol speech-to-text server for Home Assistant, backed by Saidwire"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{ name = "Saidwire", email = "support@saidwire.com" }]
+keywords = ["home-assistant", "wyoming", "speech-to-text", "stt", "assist", "saidwire"]
+dependencies = ["wyoming>=1.6,<2", "aiohttp>=3.9"]
+
+[project.optional-dependencies]
+zeroconf = ["wyoming[zeroconf]>=1.6,<2"]
+test = ["pytest", "pytest-asyncio"]
+
+[project.scripts]
+wyoming-saidwire = "wyoming_saidwire.__main__:run"
+
+[project.urls]
+Homepage = "https://saidwire.com"
+Source = "https://github.com/Saidwire/wyoming-saidwire"
+Issues = "https://github.com/Saidwire/wyoming-saidwire/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["wyoming_saidwire"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "ASYNC", "RUF"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/**" = ["ASYNC230"]
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+known-first-party = ["wyoming_saidwire"]
+combine-as-imports = true
