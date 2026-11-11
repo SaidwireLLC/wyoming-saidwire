@@ -6,7 +6,7 @@ Wyoming Protocol integration; Assist then sends your voice commands through it t
 Saidwire.
 
 If you can install custom integrations, the
-[Saidwire integration](https://github.com/Saidwire/hass-saidwire) is simpler. Use this
+[Saidwire integration](https://github.com/SaidwireLLC/hass-saidwire) is simpler. Use this
 server when you want everything to go through Wyoming (for example, to share one
 speech-to-text service between several Home Assistant installs or satellites).
 

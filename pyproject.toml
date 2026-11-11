@@ -22,8 +22,8 @@ wyoming-saidwire = "wyoming_saidwire.__main__:run"
 
 [project.urls]
 Homepage = "https://saidwire.com"
-Source = "https://github.com/Saidwire/wyoming-saidwire"
-Issues = "https://github.com/Saidwire/wyoming-saidwire/issues"
+Source = "https://github.com/SaidwireLLC/wyoming-saidwire"
+Issues = "https://github.com/SaidwireLLC/wyoming-saidwire/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["wyoming_saidwire"]
